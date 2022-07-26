@@ -1,10 +1,27 @@
 import { evaluate } from "mathjs";
 
-const regexFind = (char) => {
+/**@module /services */
+
+/**
+ * A function used to find regex expression for calculator operators.
+ * @function
+ * @name regexFindOp
+ * @param {String} char - Calculator character
+ * @return {bool} - true if regex expression found, false otherwise
+ */
+const regexFindOp = (char) => {
   const regex = /[+\-*÷]/;
   return regex.test(char);
 };
 
+/**
+ * Handles the calculator buttons
+ * @function
+ * @param {Event} e 
+ * @param {String} operation - Entire calculator string/operation- passed by Calculator Component
+ * @param {callback} setOperation -used to set the operation- passed by Calculator Component
+ * @returns {void}
+ */
 export const handleClick = (e, operation, setOperation) => {
   if (e.target.innerText === "AC") {
     setOperation("");
@@ -36,7 +53,7 @@ export const handleClick = (e, operation, setOperation) => {
         continue;
       }
 
-      if ((regexFind(newValue[i]) && isFound) || i === 0) {
+      if ((regexFindOp(newValue[i]) && isFound) || i === 0) {
         console.log("sadasd");
 
         i === 0

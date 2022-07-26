@@ -1,7 +1,20 @@
 import { makeStyles } from "@material-ui/core";
 
+/**@module organisms/Calculator/styles */
+
+/**
+ * Color of the input field when focused
+ * @const
+ * @typedef {String} focusedColor
+ */
 const focusedColor = "rgba(68, 65, 66, 0.8)";
 
+/**
+ * MakeStyles function which returns the styles for the Calculator component.
+ * @Function
+ * @name makeStyles
+ * @returns {makeStyles<Theme>}
+ */
 export default makeStyles(()=>({
     op: {
         margin: "auto",
